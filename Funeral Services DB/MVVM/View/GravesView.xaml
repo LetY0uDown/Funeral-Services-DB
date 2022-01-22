@@ -42,23 +42,27 @@
                     <StackPanel DataContext="{Binding SelectedGrave}">
 
                         <Label Content="Номер" FontSize="16"/>
-                        <TextBox Text="{Binding Number}" FontSize="16"
+                        <TextBox Text="{Binding Number}" 
                                  Style="{StaticResource TextBoxStyle}"/>
 
                         <Label Content="Ряд" FontSize="16"/>
-                        <TextBox Text="{Binding Row}" FontSize="16"
+                        <TextBox Text="{Binding Row}" 
                                  Style="{StaticResource TextBoxStyle}"/>
 
                         <Label Content="Место" FontSize="16"/>
-                        <TextBox Text="{Binding Place}" FontSize="16"
+                        <TextBox Text="{Binding Place}" 
                                  Style="{StaticResource TextBoxStyle}"/>
 
                         <Label Content="Длина" FontSize="16"/>
-                        <TextBox Text="{Binding Lenght}" FontSize="16"
+                        <TextBox Text="{Binding Lenght}" 
                                  Style="{StaticResource TextBoxStyle}"/>
 
                         <Label Content="Ширина" FontSize="16"/>
-                        <TextBox Text="{Binding Width}" FontSize="16"
+                        <TextBox Text="{Binding Width}"
+                                 Style="{StaticResource TextBoxStyle}"/>
+
+                        <Label Content="Цена участка" FontSize="16"/>
+                        <TextBox Text="{Binding Price}" 
                                  Style="{StaticResource TextBoxStyle}"/>
 
                     </StackPanel>

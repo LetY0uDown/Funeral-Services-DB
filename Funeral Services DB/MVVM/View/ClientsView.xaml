@@ -41,19 +41,19 @@
                     <StackPanel DataContext="{Binding SelectedClient}">
 
                         <Label Content="Имя" FontSize="16"/>
-                        <TextBox Text="{Binding Name}" FontSize="16"
+                        <TextBox Text="{Binding Name}" 
                                  Style="{StaticResource TextBoxStyle}"/>
 
                         <Label Content="Фамилия" FontSize="16"/>
-                        <TextBox Text="{Binding Surname}" FontSize="16"
+                        <TextBox Text="{Binding Surname}" 
                                  Style="{StaticResource TextBoxStyle}"/>
 
                         <Label Content="Отчество" FontSize="16"/>
-                        <TextBox Text="{Binding SecondName}" FontSize="16"
+                        <TextBox Text="{Binding SecondName}" 
                                  Style="{StaticResource TextBoxStyle}"/>
 
                         <Label Content="Рост" FontSize="16"/>
-                        <TextBox Text="{Binding Height}" FontSize="16"
+                        <TextBox Text="{Binding Height}" 
                                  Style="{StaticResource TextBoxStyle}"/>
 
                         <Label Content="Дата рождения" FontSize="16"/>

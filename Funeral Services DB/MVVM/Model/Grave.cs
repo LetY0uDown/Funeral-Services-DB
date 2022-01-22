@@ -11,5 +11,7 @@
 
         public double Lenght { get; set; }
         public double Width { get; set; }
+
+        public decimal Price { get; set; }
     }
 }
