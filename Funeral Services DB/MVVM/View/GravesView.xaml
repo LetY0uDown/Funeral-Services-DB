@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="Funeral_Services_DB.MVVM.View.PlacesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewModel="clr-namespace:Funeral_Services_DB.MVVM.ViewModel"
+             xmlns:local="clr-namespace:Funeral_Services_DB.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <viewModel:GravesViewModel/>
+    </UserControl.DataContext>
+    
+    <Grid Background="#505050">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer>
+            <ListBox Background="Transparent" BorderThickness="0"
+                     FontSize="18"
+                     ItemsSource="{Binding Graves}"
+                     SelectedItem="{Binding SelectedGrave}"
+                     DisplayMemberPath="Number">
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Добавить" Command="{Binding AddGrave}"/>
+                        <MenuItem Header="Удалить" Command="{Binding RemoveGrave}"/>
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+            </ListBox>
+        </ScrollViewer>
+
+        <Border Grid.Column="1"
+                BorderBrush="Black" BorderThickness="2"
+                CornerRadius="5" 
+                Margin="2" Padding="3">
+            <ScrollViewer Grid.Column="1">
+                <StackPanel>
+                    <StackPanel DataContext="{Binding SelectedGrave}">
+
+                        <Label Content="Номер" FontSize="16"/>
+                        <TextBox Text="{Binding Number}" FontSize="16"
+                                 Style="{StaticResource TextBoxStyle}"/>
+
+                        <Label Content="Ряд" FontSize="16"/>
+                        <TextBox Text="{Binding Row}" FontSize="16"
+                                 Style="{StaticResource TextBoxStyle}"/>
+
+                        <Label Content="Место" FontSize="16"/>
+                        <TextBox Text="{Binding Place}" FontSize="16"
+                                 Style="{StaticResource TextBoxStyle}"/>
+
+                        <Label Content="Длина" FontSize="16"/>
+                        <TextBox Text="{Binding Lenght}" FontSize="16"
+                                 Style="{StaticResource TextBoxStyle}"/>
+
+                        <Label Content="Ширина" FontSize="16"/>
+                        <TextBox Text="{Binding Width}" FontSize="16"
+                                 Style="{StaticResource TextBoxStyle}"/>
+
+                    </StackPanel>
+                    <StackPanel>
+
+                        <Label Content="Захоронен" FontSize="16"/>
+                        <ComboBox ItemsSource="{Binding Clients}"
+                                  SelectedItem="{Binding SelectedGrave.Client}"
+                                  DisplayMemberPath="Surname"/>
+
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</UserControl>
