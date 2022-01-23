@@ -15,14 +15,28 @@ namespace Funeral_Services_DB.MVVM.ViewModel
     {
         public MainViewModel()
         {
+            mainWindow = (MainWindow)Application.Current.MainWindow;
+
             ClientsView = new ClientsView();
             PlacesView = new PlacesView();
             CeremoniesView = new CeremoniesView();
             CurrentView = ClientsView;
 
-            ClientsViewCommand = new RelayCommand(o => CurrentView = ClientsView);
-            GravesViewCommand = new RelayCommand(o => CurrentView = PlacesView);
-            CeremoniesViewCommand = new RelayCommand(o => CurrentView = CeremoniesView);
+            ClientsViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = ClientsView;
+                mainWindow.textPageName.Content = "Список клиентов";
+            });
+            GravesViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = PlacesView;
+                mainWindow.textPageName.Content = "Список могил";
+            });
+            CeremoniesViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = CeremoniesView;
+                mainWindow.textPageName.Content = "Список церемоний";
+            }) ;
 
             ExitCommand = new RelayCommand(o =>
             {
@@ -41,7 +55,11 @@ namespace Funeral_Services_DB.MVVM.ViewModel
                 else
                     Application.Current.MainWindow.WindowState = WindowState.Normal;
             });
+
+            
         }
+
+        MainWindow mainWindow;
 
         public RelayCommand ExitCommand { get; set; }
         public RelayCommand MinimizeCommand { get; set; }

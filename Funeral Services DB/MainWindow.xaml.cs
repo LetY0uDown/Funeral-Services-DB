@@ -8,20 +8,5 @@ namespace Funeral_Services_DB
         {
             InitializeComponent();
         }
-
-        private void bClients_Click(object sender, RoutedEventArgs e)
-        {
-            textPageName.Content = "Список клиентов";
-        }
-
-        private void bGraves_Click(object sender, RoutedEventArgs e)
-        {
-            textPageName.Content = "Список могил";
-        }
-
-        private void bCeremonies_Click(object sender, RoutedEventArgs e)
-        {
-            textPageName.Content = "Список церемоний";
-        }
     }
 }

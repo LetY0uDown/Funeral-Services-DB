@@ -96,18 +96,15 @@
                 <RadioButton Content="Клиенты"
                              IsChecked="True"
                              Style="{StaticResource MainButtonStyle}"
-                             Command="{Binding ClientsViewCommand}"
-                             Click="bClients_Click"/>
+                             Command="{Binding ClientsViewCommand}"/>
                 
                 <RadioButton Content="Могилы"
                              Style="{StaticResource MainButtonStyle}"
-                             Command="{Binding GravesViewCommand}"
-                             Click="bGraves_Click"/>
+                             Command="{Binding GravesViewCommand}"/>
                 
                 <RadioButton Content="Церемонии"
                              Style="{StaticResource MainButtonStyle}"
-                             Command="{Binding CeremoniesViewCommand}"
-                             Click="bCeremonies_Click"/>
+                             Command="{Binding CeremoniesViewCommand}"/>
 
             </StackPanel>
 
