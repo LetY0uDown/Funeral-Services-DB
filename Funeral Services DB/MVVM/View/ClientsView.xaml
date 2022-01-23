@@ -72,6 +72,10 @@
                         <ComboBox ItemsSource="{Binding Graves}"
                                   DisplayMemberPath="Number"/>
 
+                        <Label Content="Церемония проведена:" FontSize="16"/>
+                        <ComboBox ItemsSource="{Binding Ceremonies}"
+                                  DisplayMemberPath="CeremonyDate"/>
+
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>

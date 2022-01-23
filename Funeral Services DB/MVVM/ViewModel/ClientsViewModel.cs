@@ -41,6 +41,11 @@ namespace Funeral_Services_DB.MVVM.ViewModel
             get => Data.Graves;
             set => Data.Graves = value;
         }
+        public ObservableCollection<Ceremony> Ceremonies
+        {
+            get => Data.Ceremonies;
+            set => Data.Ceremonies = value;
+        }
 
         private Client _selectedClient;
         public Client SelectedClient
